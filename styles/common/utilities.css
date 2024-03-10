@@ -1,0 +1,53 @@
+*{
+    margin: 10px ;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'roboto', sans-serif;
+    border-radius: 30px;
+}
+
+.flex{
+    display: flex;
+}
+
+
+.border{
+    box-shadow:0 2px 5px black ;
+}
+
+.center{
+    justify-content: center;
+    align-items: center;
+}
+
+.space-between{
+    justify-content: space-between;
+}
+
+.space-evenly{
+    justify-content: space-evenly;
+}
+
+.column{
+    flex-direction: column;
+}
+
+.row{
+    flex-direction: row;
+}   
+
+.no-border{
+    border: none;
+}
+
+.bold{
+    font-weight: bolder;
+}
+
+.start{
+    justify-content: start;
+}
+
+.align-center{
+    align-items: center;
+}

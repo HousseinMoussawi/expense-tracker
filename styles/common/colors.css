@@ -1,0 +1,24 @@
+.bg-primary{
+    background-image: linear-gradient(270deg, rgb(22, 6, 92) 0%, rgb(24, 66, 255) );
+    background-size: cover;
+}
+
+.bg-secondary{
+    background-color: rgb(60, 92, 238);
+}
+
+.txt-secondary{
+    color: rgb(22, 6, 92);
+}
+
+.txt-primary{
+    color: lightblue;
+}
+
+::placeholder{
+    color: white;
+}
+
+.txt-balance{
+    color: white;
+}

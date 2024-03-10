@@ -1,0 +1,115 @@
+.main{
+    flex-wrap: wrap;
+}
+
+.balance{
+    flex-grow: 1;
+    width: 45%;
+    min-width: 300px;
+    max-width: 90%;
+    height: 300px;
+}
+
+.balance select{
+    width: 70%;
+    height: 50px;
+    font-size: x-large;
+    text-align: center;
+}
+
+.balance h1{
+    font-size: 2.5em;
+}
+
+.create{
+    flex-grow: 1;
+    flex-wrap: wrap;
+    width: 45%;
+    max-width: 90%;
+    height: 300px;
+}
+
+.create input{
+    width: 90%;
+    text-align: center;
+    height:40px;
+    font-size: 1.5em;
+}
+
+.create input:focus{
+    outline-width:0 ;
+}
+
+.create select{
+    width: 40%;
+    text-align: center;
+    height: 40px;
+    font-size: 1.5em;
+}
+
+.create select:focus{
+    outline-width: 0;
+}
+
+.transactions{
+    width: 100%;
+}
+
+.view-transactions{
+    height: fit-content;
+    flex-grow:1;
+    width: 95%;
+}
+
+.transactions div:nth-child(even){
+    background-color: rgb(60, 92, 238);
+    color: darkblue;
+}
+
+.transactions div:nth-child(even) button{
+    background-image:linear-gradient(270deg, rgb(22, 6, 92) 0%, rgb(24, 66, 255) );
+}
+
+.filter{
+    width: 99%;
+}
+
+.filter-by{
+    list-style-type: none;
+    flex-wrap: wrap;
+    width: 95%;
+}
+
+.filter h3{
+    width:85px;
+    text-align: center;
+}
+
+.filter h3:hover{
+    background-color: blue;
+    cursor: pointer;
+}
+
+.filter input{
+    text-align: center;
+}
+
+.filter input:focus{
+    outline-width: 0;
+}
+
+.filter select:focus{
+    outline-width: 0;
+}
+
+.filter select:hover{
+    cursor: pointer;
+}
+
+.transaction-card{
+    width: 95%;
+}
+
+.transaction-card button{
+    width: 100px;
+}

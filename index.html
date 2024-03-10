@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/common/colors.css">
+    <link rel="stylesheet" href="styles/common/utilities.css">
+    <link rel="stylesheet" href="styles/common/mediaqueries.css">
+    <link rel="stylesheet" href="styles/pages/index.css">
+
+    <title>Document</title>
+</head>
+<body class="bg-secondary flex column center txt-primary">
+    
+    <main class="flex center main">
+        <div class="flex border center column bg-primary balance">
+            <h1>TOTAL BALANCE:</h1>
+            <h1> <span id="balance-amount">10000</span>  <span id="symbol"></span></h1>
+            <select name="" id="balance-currency" class="bg-primary txt-primary">
+                <option value="USD">USD</option>
+                <option value="EUR">EUR</option>
+                <option value="LBP">LBP</option>
+                <option value="AED">AED</option>
+            </select>
+        </div>
+        <div class="flex center bg-primary border create">
+            <h1>CREATE TRANSACTION</h1>
+                <input type="text" class="bg-secondary  no-border txt-secondary create-amount" placeholder="amount">
+                <select name="" id="create-type" class="bg-primary border txt-primary create-type">  
+                    <option value="">INCOME</option>
+                    <option value="">EXPENSE</option>
+                </select>
+                <select name="" id="create-currency" class="bg-primary border txt-primary create-currency">  
+                    <option value="USD">USD</option>
+                    <option value="EUR">EUR</option>
+                    <option value="LBP">LBP</option>
+                    <option value="AED">AED</option>
+                </select>
+                <input type="submit" class="bg-primary border txt-primary create-submit" value="CREATE" id="create">
+        </div>
+    </main>
+
+    <section class="flex column transactions center">
+        <h1 class="txt-secondary">TRANSACTIONS</h1>
+        <div class="flex border column start align center bg-primary view-transactions">
+            <div class="flex center border filter bg-primary">
+                <h2>FILTER:</h2>
+                <ul class="flex filter-by center">
+                    <li><h3 class="txt-primary">INCOME</h3></li>
+                    <li><h3 class="txt-primary">EXPENSE</h3></li>
+                    <li><input type="text" class="bg-secondary border txt-secondary bold" placeholder="from"></li>
+                    <li><input type="text" class="bg-secondary border txt-secondary bold" placeholder="to"></li>
+                    <li>
+                        <select name="" id="filter-currency" class="bg-primary txt-primary border">
+                            <option value="">USD</option>
+                            <option value="">EUR</option>
+                            <option value="">LBP</option>
+                            <option value="">AED</option>
+                        </select></li>
+                </ul>
+            </div>
+
+
+            <div class="flex border space-evenly txt-primary transaction-card">
+                <h3 class="type">heloo</h3>
+                <h3>hello</h3>
+                <h3>hi</h3>
+                <button class="bg-secondary txt-primary border">create</button>
+                <button class="bg-secondary txt-primary border">delete</button>
+            </div>
+            <div class="flex border space-evenly txt-primary transaction-card">
+                <h3 class="type">heloo</h3>
+                <h3>hello</h3>
+                <h3>hi</h3>
+                <button class="bg-secondary txt-primary border">create</button>
+                <button class="bg-secondary txt-primary border">delete</button>
+            </div>
+            <div class="flex border space-evenly txt-primary transaction-card">
+                <h3 class="type">heloo</h3>
+                <h3>hello</h3>
+                <h3>hi</h3>
+                <button class="bg-secondary txt-primary border">create</button>
+                <button class="bg-secondary txt-primary border">delete</button>
+            </div>
+            <div class="flex border space-evenly txt-primary transaction-card">
+                <h3 class="type">heloo</h3>
+                <h3>hello</h3>
+                <h3>hi</h3>
+                <button class="bg-secondary txt-primary border">create</button>
+                <button class="bg-secondary txt-primary border">delete</button>
+            </div>
+            <div class="flex border space-evenly txt-primary transaction-card">
+                <h3 class="type">heloo</h3>
+                <h3>hello</h3>
+                <h3>hi</h3>
+                <button class="bg-secondary txt-primary border">create</button>
+                <button class="bg-secondary txt-primary border">delete</button>
+            </div>
+            <div class="flex border space-evenly txt-primary transaction-card">
+                <h3 class="type">heloo</h3>
+                <h3>hello</h3>
+                <h3>hi</h3>
+                <button class="bg-secondary txt-primary border">create</button>
+                <button class="bg-secondary txt-primary border">delete</button>
+            </div>
+            <div class="flex border space-evenly txt-primary transaction-card">
+                <h3 class="type">heloo</h3>
+                <h3>hello</h3>
+                <h3>hi</h3>
+                <button class="bg-secondary txt-primary border">create</button>
+                <button class="bg-secondary txt-primary border">delete</button>
+            </div>
+            <div class="flex border space-evenly txt-primary transaction-card">
+                <h3 class="type">heloo</h3>
+                <h3>hello</h3>
+                <h3>hi</h3>
+                <button class="bg-secondary txt-primary border">create</button>
+                <button class="bg-secondary txt-primary border">delete</button>
+            </div>
+            <div class="flex border space-evenly txt-primary transaction-card">
+                <h3 class="type">heloo</h3>
+                <h3>hello</h3>
+                <h3>hi</h3>
+                <button class="bg-secondary txt-primary border">create</button>
+                <button class="bg-secondary txt-primary border">delete</button>
+            </div>
+        </div>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="scripts/index.js"></script>
+</body>
+</html>
