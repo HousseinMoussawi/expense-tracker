@@ -15,7 +15,7 @@
     <main class="flex center main">
         <div class="flex border center column bg-primary balance">
             <h1>TOTAL BALANCE:</h1>
-            <h1> <span id="balance-amount">10000</span>  <span id="symbol"></span></h1>
+            <h1> <span id="balance-amount"></span>  <span id="symbol"></span></h1>
             <select name="" id="balance-currency" class="bg-primary txt-primary">
                 <option value="USD">USD</option>
                 <option value="EUR">EUR</option>
@@ -25,10 +25,10 @@
         </div>
         <div class="flex center bg-primary border create">
             <h1>CREATE TRANSACTION</h1>
-                <input type="text" class="bg-secondary  no-border txt-secondary create-amount" placeholder="amount">
+                <input id="create-amount" type="text" class="bg-secondary no-border txt-secondary create-amount" placeholder="amount">
                 <select name="" id="create-type" class="bg-primary border txt-primary create-type">  
-                    <option value="">INCOME</option>
-                    <option value="">EXPENSE</option>
+                    <option value="INCOME">INCOME</option>
+                    <option value="EXPENSE">EXPENSE</option>
                 </select>
                 <select name="" id="create-currency" class="bg-primary border txt-primary create-currency">  
                     <option value="USD">USD</option>
@@ -52,78 +52,24 @@
                     <li><input type="text" class="bg-secondary border txt-secondary bold" placeholder="to"></li>
                     <li>
                         <select name="" id="filter-currency" class="bg-primary txt-primary border">
-                            <option value="">USD</option>
-                            <option value="">EUR</option>
-                            <option value="">LBP</option>
-                            <option value="">AED</option>
+                            <option value="USD">USD</option>
+                            <option value="EUR">EUR</option>
+                            <option value="LBP">LBP</option>
+                            <option value="AED">AED</option>
                         </select></li>
                 </ul>
             </div>
 
 
             <div class="flex border space-evenly txt-primary transaction-card">
-                <h3 class="type">heloo</h3>
-                <h3>hello</h3>
-                <h3>hi</h3>
-                <button class="bg-secondary txt-primary border">create</button>
+                <h3 class="type">AMOUNT</h3>
+                <h3>TYPE</h3>
+                <h3>CURRENCY</h3>
+                <h3>ID</h3>
+                <button class="bg-secondary txt-primary border">update</button>
                 <button class="bg-secondary txt-primary border">delete</button>
             </div>
-            <div class="flex border space-evenly txt-primary transaction-card">
-                <h3 class="type">heloo</h3>
-                <h3>hello</h3>
-                <h3>hi</h3>
-                <button class="bg-secondary txt-primary border">create</button>
-                <button class="bg-secondary txt-primary border">delete</button>
-            </div>
-            <div class="flex border space-evenly txt-primary transaction-card">
-                <h3 class="type">heloo</h3>
-                <h3>hello</h3>
-                <h3>hi</h3>
-                <button class="bg-secondary txt-primary border">create</button>
-                <button class="bg-secondary txt-primary border">delete</button>
-            </div>
-            <div class="flex border space-evenly txt-primary transaction-card">
-                <h3 class="type">heloo</h3>
-                <h3>hello</h3>
-                <h3>hi</h3>
-                <button class="bg-secondary txt-primary border">create</button>
-                <button class="bg-secondary txt-primary border">delete</button>
-            </div>
-            <div class="flex border space-evenly txt-primary transaction-card">
-                <h3 class="type">heloo</h3>
-                <h3>hello</h3>
-                <h3>hi</h3>
-                <button class="bg-secondary txt-primary border">create</button>
-                <button class="bg-secondary txt-primary border">delete</button>
-            </div>
-            <div class="flex border space-evenly txt-primary transaction-card">
-                <h3 class="type">heloo</h3>
-                <h3>hello</h3>
-                <h3>hi</h3>
-                <button class="bg-secondary txt-primary border">create</button>
-                <button class="bg-secondary txt-primary border">delete</button>
-            </div>
-            <div class="flex border space-evenly txt-primary transaction-card">
-                <h3 class="type">heloo</h3>
-                <h3>hello</h3>
-                <h3>hi</h3>
-                <button class="bg-secondary txt-primary border">create</button>
-                <button class="bg-secondary txt-primary border">delete</button>
-            </div>
-            <div class="flex border space-evenly txt-primary transaction-card">
-                <h3 class="type">heloo</h3>
-                <h3>hello</h3>
-                <h3>hi</h3>
-                <button class="bg-secondary txt-primary border">create</button>
-                <button class="bg-secondary txt-primary border">delete</button>
-            </div>
-            <div class="flex border space-evenly txt-primary transaction-card">
-                <h3 class="type">heloo</h3>
-                <h3>hello</h3>
-                <h3>hi</h3>
-                <button class="bg-secondary txt-primary border">create</button>
-                <button class="bg-secondary txt-primary border">delete</button>
-            </div>
+            
         </div>
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
