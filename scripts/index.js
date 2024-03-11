@@ -99,7 +99,7 @@ const getTransactions = () => {
             tr.classList.add('flex', 'border', 'space-evenly', 'txt-primary', 'transaction-card')
             tr.id = transaction[i].id
             tr.innerHTML = `<h3 class="type">${transaction[i].amount} </h3>
-            <h3>${transaction[i].type}</h3>
+            <h3 class="${transaction[i].type}">${transaction[i].type}</h3>
             <h3>${transaction[i].currency}</h3>
             <h3>${transaction[i].id}</h3>
             <button class="bg-secondary update txt-primary border">update</button>
@@ -113,9 +113,8 @@ getTransactions();
 
 deleted.forEach(del => {
     del.addEventListener('click', () => {
-        transaction = JSON.parse(localStorage.getItem('transaction'))
         const id = del.parentElement.id
-        const transaction = JSON.parse(localStorage.getItem('transaction'))
+        let transaction = JSON.parse(localStorage.getItem('transaction'))
         const index = transaction.findIndex(transaction => transaction.id === parseInt(id)) 
         if(transaction[index].type === 'INCOME'){
             balance -= parseInt(transaction[index].amount)

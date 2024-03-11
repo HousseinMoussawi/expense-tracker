@@ -113,3 +113,11 @@
 .transaction-card button{
     width: 100px;
 }
+
+.EXPENSE{
+    color: red;
+}
+
+.INCOME{
+    color: lightgreen;
+}
