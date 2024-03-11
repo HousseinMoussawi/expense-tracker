@@ -7,10 +7,20 @@ const create_type = document.getElementById('create-type')
 const create_currency = document.getElementById('create-currency')
 
 
-let transaction = []
-let balance = 10000
-localStorage.setItem('balance', balance)
+let deleted = document.querySelectorAll('.delete')
 
+deleted.forEach(btn => {
+    btn.addEventListener('click',() => {
+        console.log('hello world')
+    }
+    );
+}
+);
+
+
+let transaction = []
+let balance = localStorage.getItem('balance') ? parseInt(localStorage.getItem('balance')) : 0
+balance_amount.innerHTML = balance
 
 
 const converter = (from, to, amount) => {
@@ -49,6 +59,7 @@ const currencies = axios.get("https://rich-erin-angler-hem.cyclic.app/students/a
 
 const createTransaction = (amount, type, currency,id) => {
     localStorage.getItem('id') ? id = localStorage.getItem('id') : id = 0
+    localStorage.getItem('transaction') ? transaction = JSON.parse(localStorage.getItem('transaction')) : transaction = []
     transaction.push({
         "id": id,
         "amount": amount,
@@ -57,14 +68,56 @@ const createTransaction = (amount, type, currency,id) => {
     })
     id++
     localStorage.setItem('id', id)
-    
     localStorage.setItem('transaction', JSON.stringify(transaction))
+    window.location.reload()
 }
 
 create.addEventListener('click', () => {
+    if(create_amount.value === ''){ 
+        alert('Please enter an amount')
+        create_amount.value = ''
+        return
+    }
+    else if(isNaN(create_amount.value) ){ 
+        alert('Please enter a valid amount')
+        create_amount.value = ''
+        return
+    }
     createTransaction(create_amount.value, create_type.value, create_currency.value)
     if(create_type.value === 'INCOME'){
         balance += parseInt(create_amount.value)
+        localStorage.setItem('balance', balance)
+        balance_amount.innerHTML = balance
     }
-    
+    else{
+        balance -= parseInt(create_amount.value)
+        localStorage.setItem('balance', balance)
+        balance_amount.innerHTML = balance
+    }
 })
+
+
+
+const getTransactions = () => {
+    if(localStorage.getItem('transaction')){
+        transaction = JSON.parse(localStorage.getItem('transaction'))
+        for(let i = 0; i < transaction.length; i++){
+            const tr = document.createElement('div')
+            tr.classList.add('flex', 'border', 'space-evenly', 'txt-primary', 'transaction-card')
+            tr.id = transaction[i].id
+            tr.innerHTML = `<h3 class="type">${transaction[i].amount} </h3>
+            <h3>${transaction[i].type}</h3>
+            <h3>${transaction[i].currency}</h3>
+            <h3>${transaction[i].id}</h3>
+            <button class="bg-secondary update txt-primary border">update</button>
+            <button class="delete bg-secondary  txt-primary border">delete</button>`
+            document.getElementById('view-transactions').appendChild(tr)
+    }
+}}
+
+getTransactions();
+
+
+
+
+
