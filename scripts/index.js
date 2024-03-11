@@ -6,7 +6,11 @@ const create_amount = document.getElementById('create-amount')
 const create_type = document.getElementById('create-type')
 const create_currency = document.getElementById('create-currency')
 const deleted = document.querySelectorAll('.delete')
-
+const filter_by_income = document.getElementById('filter-by-income')
+const filter_by_expense = document.getElementById('filter-by-expense')
+const from = document.getElementById('from')
+const to = document.getElementById('to')
+const filter_by_currency = document.getElementById('filter-by-currency')
 
 
 
@@ -132,4 +136,71 @@ deleted.forEach(del => {
     
 })  })
 
+filter_by_income.addEventListener('click', () => {
+    const transaction = JSON.parse(localStorage.getItem('transaction'))
+    const income = transaction.filter(transaction => transaction.type === 'INCOME')
+    document.getElementById('view-transactions').innerHTML = `<div class="flex center border filter bg-primary">
+    <h2>FILTER:</h2>
+    <ul class="flex filter-by center">
+        <li><h3 class="txt-primary" id="filter-by-income">INCOME</h3></li>
+        <li><h3 class="txt-primary" id="filter-by-expense">EXPENSE</h3></li>
+        <li><input type="text" class="bg-secondary border txt-secondary bold" placeholder="from" id="from"></li>
+        <li><input type="text" class="bg-secondary border txt-secondary bold" placeholder="to" id="to"></li>
+        <li>
+            <select name="" id="filter-by-currency" class="bg-primary txt-primary border">
+                <option value="USD">USD</option>
+                <option value="EUR">EUR</option>
+                <option value="LBP">LBP</option>
+                <option value="AED">AED</option>
+            </select></li>
+    </ul>
+</div>`
+    for(let i = 0; i < income.length; i++){
+        const tr = document.createElement('div')
+        tr.classList.add('flex', 'border', 'space-evenly', 'txt-primary', 'transaction-card')
+        tr.id = income[i].id
+        tr.innerHTML = `<h3 class="type">${income[i].amount} </h3>
+        <h3 class="${income[i].type}">${income[i].type}</h3>
+        <h3>${income[i].currency}</h3>
+        <h3>${income[i].id}</h3>
+        <button class="bg-secondary update txt-primary border">update</button>
+        <button class="delete bg-secondary  txt-primary border">delete</button>`
+        document.getElementById('view-transactions').appendChild(tr)
+    }
+}   )
+
+filter_by_expense.addEventListener('click', () => { 
+
+    const transaction = JSON.parse(localStorage.getItem('transaction'))
+    const expense = transaction.filter(transaction => transaction.type === 'EXPENSE')
+    document.getElementById('view-transactions').innerHTML = `<div class="flex center border filter bg-primary">
+    <h2>FILTER:</h2>
+    <ul class="flex filter-by center">
+        <li><h3 class="txt-primary" id="filter-by-income">INCOME</h3></li>
+        <li><h3 class="txt-primary" id="filter-by-expense">EXPENSE</h3></li>
+        <li><input type="text" class="bg-secondary border txt-secondary bold" placeholder="from" id="from"></li>
+        <li><input type="text" class="bg-secondary border txt-secondary bold" placeholder="to" id="to"></li>
+        <li>
+            <select name="" id="filter-by-currency" class="bg-primary txt-primary border">
+                <option value="USD">USD</option>
+                <option value="EUR">EUR</option>
+                <option value="LBP">LBP</option>
+                <option value="AED">AED</option>
+            </select></li>
+    </ul>
+    </div>`
+    for(let i = 0; i < expense.length; i++){
+        console.log('hello')
+        const tr = document.createElement('div')
+        tr.classList.add('flex', 'border', 'space-evenly', 'txt-primary', 'transaction-card')
+        tr.id = expense[i].id
+        tr.innerHTML = `<h3 class="type">${expense[i].amount} </h3>
+        <h3 class="${expense[i].type}">${expense[i].type}</h3>
+        <h3>${expense[i].currency}</h3>
+        <h3>${expense[i].id}</h3>
+        <button class="bg-secondary update txt-primary border">update</button>
+        <button class="delete bg-secondary  txt-primary border">delete</button>`
+        document.getElementById('view-transactions').appendChild(tr)
+    }
+}   )
 
