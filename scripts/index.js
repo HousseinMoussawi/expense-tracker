@@ -5,17 +5,10 @@ const create = document.getElementById('create')
 const create_amount = document.getElementById('create-amount')
 const create_type = document.getElementById('create-type')
 const create_currency = document.getElementById('create-currency')
+const deleted = document.querySelectorAll('.delete')
 
 
-let deleted = document.querySelectorAll('.delete')
 
-deleted.forEach(btn => {
-    btn.addEventListener('click',() => {
-        console.log('hello world')
-    }
-    );
-}
-);
 
 
 let transaction = []
@@ -118,6 +111,26 @@ const getTransactions = () => {
 getTransactions();
 
 
-
+deleted.forEach(del => {
+    del.addEventListener('click', () => {
+        transaction = JSON.parse(localStorage.getItem('transaction'))
+        const id = del.parentElement.id
+        const transaction = JSON.parse(localStorage.getItem('transaction'))
+        const index = transaction.findIndex(transaction => transaction.id === parseInt(id)) 
+        if(transaction[index].type === 'INCOME'){
+            balance -= parseInt(transaction[index].amount)
+            localStorage.setItem('balance', balance)
+            balance_amount.innerHTML = balance
+        }
+        else{
+            balance += parseInt(transaction[index].amount)
+            localStorage.setItem('balance', balance)
+            balance_amount.innerHTML = balance
+        }
+        transaction.splice(index, 1)
+        localStorage.setItem('transaction', JSON.stringify(transaction))
+        window.location.reload()
+    
+})  })
 
 
